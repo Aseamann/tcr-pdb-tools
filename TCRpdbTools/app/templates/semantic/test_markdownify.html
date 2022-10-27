@@ -5,27 +5,27 @@
 
 
 {% block css %}
-  <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
-  <link href="{% static 'martor/css/martor.semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+    <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet"/>
+    <link href="{% static 'martor/css/martor.semantic.min.css' %}" type="text/css" media="all" rel="stylesheet"/>
 {% endblock %}
 
 {% block content %}
-  <div class="martor-content">
-    <h1>Title: {{ post.title }}</h1>
-    <p><b>Description:</b></p>
-    <hr />
-    <div class="martor-preview">
-      {{ post.description|safe_markdown }}
+    <div class="martor-content">
+        <h1>Title: {{ post.title }}</h1>
+        <p><b>Description:</b></p>
+        <hr/>
+        <div class="martor-preview">
+            {{ post.description|safe_markdown }}
+        </div>
     </div>
-  </div>
 {% endblock %}
 
 
 {% block js %}
-  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
-  <script>
-    $('.martor-preview pre').each(function(i, block){
-        hljs.highlightBlock(block);
-    });
-  </script>
+    <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+    <script>
+        $('.martor-preview pre').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    </script>
 {% endblock %}
