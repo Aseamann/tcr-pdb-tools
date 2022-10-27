@@ -26,6 +26,19 @@ class Post(models.Model):
         return self.title
 
 
+FUNCTION_CHOICES = [("CENTER", "center"), ("SPLIT_TCR", "split_tcr")]
+
+
+class PdbToolsForm(models.Model):
+    pdb = models.CharField(max_length=4)
+    action1 = models.CharField(max_length=50, choices=FUNCTION_CHOICES, blank=False)
+    action2 = models.CharField(max_length=50, choices=FUNCTION_CHOICES, blank=False)
+    action3 = models.CharField(max_length=50, choices=FUNCTION_CHOICES, blank=False)
+
+    def __(self):
+        return self.pdb + " " + self.action1
+
+
 class PostMeta(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     text = MartorField()

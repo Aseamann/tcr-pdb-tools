@@ -3,17 +3,25 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from app.forms import SimpleForm, PostForm
+from app.forms import SimpleForm, PostForm, PdbToolsForm
+# from app.forms import PdbToolsForm, PostForm
 from app.models import Post
 
 
 def home_redirect_view(request):
-    return redirect("simple_form")
+    return redirect("pdb_form")
 
 
 def simple_form_view(request):
     form = SimpleForm()
     context = {"form": form, "title": "Simple Form"}
+    theme = getattr(settings, "MARTOR_THEME", "bootstrap")
+    return render(request, "%s/form.html" % theme, context)
+
+
+def pdb_tools_view(request):
+    form = PdbToolsForm()
+    context = {"form": form, "title": "PDB Form"}
     theme = getattr(settings, "MARTOR_THEME", "bootstrap")
     return render(request, "%s/form.html" % theme, context)
 

@@ -9,13 +9,12 @@
 {% endblock %}
 
 {% block content %}
-  <form class="form" method="post">{% csrf_token %}
-    <div class="form-group">
-      <button class="btn btn-success">
-        <i class="save icon"></i> Submit
-      </button>
-    </div>
-  </form>
+    <form class="form" method="PdbToolsForm">{% csrf_token %}
+        {{ form.as_table }}
+        <button class="btn btn-success">
+            <i class="save icon"></i> Submit
+        </button>
+    </form>
 {% endblock %}
 
 {% block js %}

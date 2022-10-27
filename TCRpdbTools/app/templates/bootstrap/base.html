@@ -9,7 +9,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/">Martor</a>
+      <a class="navbar-brand" href="/">TCRpdbTools</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,6 +21,7 @@
               Choose Demo
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'pdb_form' %}">PDB Tools</a>
               <a class="dropdown-item" href="{% url 'simple_form' %}">Simple Form</a>
               <a class="dropdown-item" href="{% url 'post_form' %}">Post Form (login require)</a>
               <a class="dropdown-item" href="{% url 'test_markdownify' %}">Test Markdownify</a>

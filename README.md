@@ -24,17 +24,28 @@ See in-app menus for help with using specific features.
 ## User Stories
 As a student, I want to be able to easily access T-cell Receptor structural data from a list of existing public PDB file, so that I can visualize the protein structures in a 3D viewer.
 
+
+
 As a structural biologist, I want to be able to easily upload T-cell Receptor structural data stored as a PDB, so that I can conduct modifications that can help further analysis.
+
+
 
 As an administrator, I want to be able to view statical data on cite traffic, so I can share this data with other researchers when describing the usefulness of the application.
 
+
+
 As a mis-user, I want to collect structural biologist data of T-cell Receptors that may not be published yet in a public database.
-    Ensure that proper security measures are in place to prevent access to other users' accounts. Several steps can be in place, non-plain text storage of passwords, captcha if several attempts, and potential for 2FA.
+
+Ensure that proper security measures are in place to prevent access to other users' accounts. Several steps can be in place, non-plain text storage of passwords, captcha if several attempts, and potential for 2FA.
 
 As a mis-user, I want to ....
 
-## Architecture Diagrams
+## Diagrams
+
+### Mockup
 ![alt text](https://github.com/aseamann/tcr-pdb-tools/blob/main/WebpageDesign.png?raw=true)
+
+### Architecture Diagrams
 
 # License
 The MIT License (MIT)
