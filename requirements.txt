@@ -3,3 +3,6 @@ Markdown==3.3.4
 requests
 martor
 gunicorn
+numpy
+biopython
+sklearn

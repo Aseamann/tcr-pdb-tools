@@ -4,5 +4,5 @@ services:
     build: .
     ports: 
     - "8000:8000"
-    container_name: martor_demo
+    container_name: TCRpdbTools
     restart: unless-stopped
