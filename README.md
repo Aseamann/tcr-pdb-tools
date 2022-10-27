@@ -34,7 +34,7 @@ As a mis-user, I want to collect structural biologist data of T-cell Receptors t
 As a mis-user, I want to ....
 
 ## Architecture Diagrams
-![alt text](https://github.com/aseamann/tcr-pdb-tools/blob/main/Resources/WebpageDesign.png?raw=true)
+![alt text](https://github.com/aseamann/tcr-pdb-tools/blob/main/WebpageDesign.png?raw=true)
 
 # License
 The MIT License (MIT)
