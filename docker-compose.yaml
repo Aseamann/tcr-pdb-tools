@@ -4,5 +4,8 @@ services:
     build: .
     ports: 
     - "8000:8000"
+    volumes:
+      - "./TCRpdbTools:/opt/app"
     container_name: TCRpdbTools
     restart: unless-stopped
+    command: bash -c '(gunicorn TCRpdbTools.wsgi --user www-data --bind 0.0.0.0:8010 --workers 3) & nginx -g "daemon off;"'

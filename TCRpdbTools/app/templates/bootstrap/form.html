@@ -9,12 +9,29 @@
 {% endblock %}
 
 {% block content %}
-    <form class="form" method="PdbToolsForm">{% csrf_token %}
-        {{ form.as_table }}
-        <button class="btn btn-success">
-            <i class="save icon"></i> Submit
-        </button>
-    </form>
+    <div class="form-group">
+        <form class="form" method="post" action="post-pdb/">
+            <div class="row">
+                <div class="col-md-2">
+                    PDB: {{ form.pdb }}
+                </div>
+                <div class="col-md-3">
+                    Action 1: {{ form.action1 }}
+                </div>
+                <div class="col-md-3">
+                    Action 2: {{ form.action2 }}
+                </div>
+                <div class="col-md-3">
+                    Action 3: {{ form.action3 }}
+                </div>
+                <div class="col">
+                    <button class="btn btn-success">
+                        <i class="save icon"></i> Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}
 
 {% block js %}
@@ -22,8 +39,8 @@
     <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/js/typo.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/js/spellcheck.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'plugins/js/typo.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'plugins/js/spellcheck.js' %}"></script>#}
     <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>

@@ -6,3 +6,5 @@ gunicorn
 numpy
 biopython
 sklearn
+djangorestframework
+pypdb

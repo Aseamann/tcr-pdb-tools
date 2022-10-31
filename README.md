@@ -3,21 +3,13 @@ Web application for processing T-cell Receptor (TCR) structural files (PDBs) wit
 
 ## Installation
 ```bash
-docker-build .
-docker-compose run django bash
-python manage.py migrate
-python manage.py createsuperuser
+docker compose build
 ```
 
 ## Getting Started
 To run my awesome app simply,
 ```bash
-###### docker-compose up
-docker run -it -p 8020:8020 \
--e DJANGO_SUPERUSER_USERNAME=admin \
--e DJANGO_SUPERUSER_PASSWORD=password \
--e DJANGO_SUPERUSER_EMAIL=admin@example.com \
-tcr-pdb-tools
+docker comopose up
 ```
 See in-app menus for help with using specific features.
 

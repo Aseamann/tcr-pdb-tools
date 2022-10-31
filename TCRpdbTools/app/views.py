@@ -1,57 +1,41 @@
 from django.conf import settings
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from app.forms import SimpleForm, PostForm, PdbToolsForm
-# from app.forms import PdbToolsForm, PostForm
-from app.models import Post
+from app.forms import PdbToolsForm, PostPdbForm
+from PDBS.process_pdb_request import *
 
 
 def home_redirect_view(request):
     return redirect("pdb_form")
 
 
-def simple_form_view(request):
-    form = SimpleForm()
-    context = {"form": form, "title": "Simple Form"}
-    theme = getattr(settings, "MARTOR_THEME", "bootstrap")
-    return render(request, "%s/form.html" % theme, context)
-
-
 def pdb_tools_view(request):
     form = PdbToolsForm()
+    form_class = PostPdbForm
     context = {"form": form, "title": "PDB Form"}
     theme = getattr(settings, "MARTOR_THEME", "bootstrap")
     return render(request, "%s/form.html" % theme, context)
 
 
-@login_required
-def post_form_view(request):
+def post_pdb_view(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PdbToolsForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            messages.success(request, "%s successfully saved." % post.title)
-            return redirect("test_markdownify")
-    else:
-        form = PostForm()
-        context = {"form": form, "title": "Post Form"}
-    theme = getattr(settings, "MARTOR_THEME", "bootstrap")
-    return render(request, "%s/form.html" % theme, context)
+            pdb = request.POST.get('pdb')
+            actions = [request.POST.get('action1'), request.POST.get('action2'), request.POST.get('action3')]
+            context = {"pdb": pdb, "actions": actions}
+            pdb_loc = process_modification(context)
 
-
-def test_markdownify(request):
-    post = Post.objects.last()
-    context = {"post": post}
-    if post is None:
-        context = {
-            "post": {
-                "title": "Fake Post",
-                "description": """It **working**! :heart: [Python Learning](https://python.web.id)""",
-            }
-        }
-    theme = getattr(settings, "MARTOR_THEME", "bootstrap")
-    return render(request, "%s/test_markdownify.html" % theme, context)
+            with open(pdb_loc, "r") as f:
+                data = f.read()
+            response = HttpResponse(data)
+            response['Content-Disposition'] = ('attachment; filename="%s"' % (pdb + ".pdb"))
+            return response
+        else:
+            form = PdbToolsForm()
+        context = {"form": form, "title": "Post Pdb"}
+        theme = getattr(settings, "MARTOR_THEME", "bootstrap")
+        return render(request, "%s/form.html" % theme, context)

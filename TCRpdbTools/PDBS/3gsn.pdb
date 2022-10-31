@@ -1,30 +1,29 @@
 HEADER    IMMUNE SYSTEM                           27-MAR-09   3GSN              
-TITLE     CRYSTAL STRUCTURE OF THE PUBLIC RA14 TCR IN COMPLEX WITH THE          
-TITLE    2 HCMV DOMINANT NLV/HLA-A2 EPITOPE                                     
+TITLE     CRYSTAL STRUCTURE OF THE PUBLIC RA14 TCR IN COMPLEX WITH THE HCMV     
+TITLE    2 DOMINANT NLV/HLA-A2 EPITOPE                                          
 COMPND    MOL_ID: 1;                                                            
-COMPND   2 MOLECULE: HLA CLASS I HISTOCOMPATIBILITY ANTIGEN, A-2 ALPHA          
-COMPND   3 CHAIN;                                                               
-COMPND   4 CHAIN: H;                                                            
-COMPND   5 SYNONYM: MHC CLASS I ANTIGEN A*2;                                    
-COMPND   6 ENGINEERED: YES;                                                     
-COMPND   7 MUTATION: YES;                                                       
-COMPND   8 MOL_ID: 2;                                                           
-COMPND   9 MOLECULE: HCMV PP65 FRAGMENT 495-503 (NLVPMVATV);                    
-COMPND  10 CHAIN: P;                                                            
-COMPND  11 ENGINEERED: YES;                                                     
-COMPND  12 MOL_ID: 3;                                                           
-COMPND  13 MOLECULE: BETA-2-MICROGLOBULIN;                                      
-COMPND  14 CHAIN: L;                                                            
-COMPND  15 SYNONYM: BETA-2-MICROGLOBULIN FORM PI 5.3;                           
-COMPND  16 ENGINEERED: YES;                                                     
-COMPND  17 MOL_ID: 4;                                                           
-COMPND  18 MOLECULE: RA14 TCR ALPHA CHAIN (TRAV24, TRAJ49);                     
-COMPND  19 CHAIN: A;                                                            
-COMPND  20 ENGINEERED: YES;                                                     
-COMPND  21 MOL_ID: 5;                                                           
-COMPND  22 MOLECULE: RA14 TCR BETA CHAIN (TRBV6-5, TRBD1, TRBJ1-2);             
-COMPND  23 CHAIN: B;                                                            
-COMPND  24 ENGINEERED: YES                                                      
+COMPND   2 MOLECULE: HLA CLASS I HISTOCOMPATIBILITY ANTIGEN, A-2 ALPHA CHAIN;   
+COMPND   3 CHAIN: H;                                                            
+COMPND   4 SYNONYM: MHC CLASS I ANTIGEN A*2;                                    
+COMPND   5 ENGINEERED: YES;                                                     
+COMPND   6 MUTATION: YES;                                                       
+COMPND   7 MOL_ID: 2;                                                           
+COMPND   8 MOLECULE: HCMV PP65 FRAGMENT 495-503 (NLVPMVATV);                    
+COMPND   9 CHAIN: P;                                                            
+COMPND  10 ENGINEERED: YES;                                                     
+COMPND  11 MOL_ID: 3;                                                           
+COMPND  12 MOLECULE: BETA-2-MICROGLOBULIN;                                      
+COMPND  13 CHAIN: L;                                                            
+COMPND  14 SYNONYM: BETA-2-MICROGLOBULIN FORM PI 5.3;                           
+COMPND  15 ENGINEERED: YES;                                                     
+COMPND  16 MOL_ID: 4;                                                           
+COMPND  17 MOLECULE: RA14 TCR ALPHA CHAIN (TRAV24, TRAJ49);                     
+COMPND  18 CHAIN: A;                                                            
+COMPND  19 ENGINEERED: YES;                                                     
+COMPND  20 MOL_ID: 5;                                                           
+COMPND  21 MOLECULE: RA14 TCR BETA CHAIN (TRBV6-5, TRBD1, TRBJ1-2);             
+COMPND  22 CHAIN: B;                                                            
+COMPND  23 ENGINEERED: YES                                                      
 SOURCE    MOL_ID: 1;                                                            
 SOURCE   2 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
 SOURCE   3 ORGANISM_COMMON: HUMAN;                                              
@@ -67,34 +66,32 @@ SOURCE  39 EXPRESSION_SYSTEM_TAXID: 562;
 SOURCE  40 EXPRESSION_SYSTEM_STRAIN: BL21(DE3)RIL;                              
 SOURCE  41 EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              
 SOURCE  42 EXPRESSION_SYSTEM_PLASMID: PET22B                                    
-KEYWDS    HLA, HUMAN CYTOMEGALOVIRUS, PP65, T CELL RECEPTOR (TCR),              
-KEYWDS   2 IMMUNE RESPONSE, PUBLIC RESPONSE, IMMUNODOMINANCE,                   
-KEYWDS   3 RESTRAINED RESPONSE, HOST-VIRUS INTERACTION, MEMBRANE, MHC           
-KEYWDS   4 I, POLYMORPHISM, IMMUNOGLOBULIN DOMAIN, IMMUNE SYSTEM                
+KEYWDS    HLA, HUMAN CYTOMEGALOVIRUS, PP65, T CELL RECEPTOR (TCR), IMMUNE       
+KEYWDS   2 RESPONSE, PUBLIC RESPONSE, IMMUNODOMINANCE, RESTRAINED RESPONSE,     
+KEYWDS   3 HOST-VIRUS INTERACTION, MEMBRANE, MHC I, POLYMORPHISM,               
+KEYWDS   4 IMMUNOGLOBULIN DOMAIN, IMMUNE SYSTEM                                 
 EXPDTA    X-RAY DIFFRACTION                                                     
 AUTHOR    S.GRAS,X.SAULQUIN,J.-B.REISER,E.DEBEAUPUIS,K.ECHASSERIEAU,            
-AUTHOR   2 A.KISSENPFENNIG,F.LEGOUX,A.CHOUQUET,M.LE GORREC,                     
-AUTHOR   3 P.MACHILLOT,B.NEVEU,N.THIELENS,B.MALISSEN,M.BONNEVILLE,              
-AUTHOR   4 D.HOUSSET                                                            
+AUTHOR   2 A.KISSENPFENNIG,F.LEGOUX,A.CHOUQUET,M.LE GORREC,P.MACHILLOT,B.NEVEU, 
+AUTHOR   3 N.THIELENS,B.MALISSEN,M.BONNEVILLE,D.HOUSSET                         
+REVDAT   2   20-OCT-21 3GSN    1       REMARK SEQADV                            
 REVDAT   1   04-AUG-09 3GSN    0                                                
-JRNL        AUTH   S.GRAS,X.SAULQUIN,J.B.REISER,E.DEBEAUPUIS,                   
-JRNL        AUTH 2 K.ECHASSERIEAU,A.KISSENPFENNIG,F.LEGOUX,A.CHOUQUET,          
-JRNL        AUTH 3 M.LE GORREC,P.MACHILLOT,B.NEVEU,N.THIELENS,                  
-JRNL        AUTH 4 B.MALISSEN,M.BONNEVILLE,D.HOUSSET                            
-JRNL        TITL   STRUCTURAL BASES FOR THE AFFINITY-DRIVEN SELECTION           
-JRNL        TITL 2 OF A PUBLIC TCR AGAINST A DOMINANT HUMAN                     
-JRNL        TITL 3 CYTOMEGALOVIRUS EPITOPE.                                     
+JRNL        AUTH   S.GRAS,X.SAULQUIN,J.B.REISER,E.DEBEAUPUIS,K.ECHASSERIEAU,    
+JRNL        AUTH 2 A.KISSENPFENNIG,F.LEGOUX,A.CHOUQUET,M.LE GORREC,P.MACHILLOT, 
+JRNL        AUTH 3 B.NEVEU,N.THIELENS,B.MALISSEN,M.BONNEVILLE,D.HOUSSET         
+JRNL        TITL   STRUCTURAL BASES FOR THE AFFINITY-DRIVEN SELECTION OF A      
+JRNL        TITL 2 PUBLIC TCR AGAINST A DOMINANT HUMAN CYTOMEGALOVIRUS EPITOPE. 
 JRNL        REF    J.IMMUNOL.                    V. 183   430 2009              
 JRNL        REFN                   ISSN 0022-1767                               
 JRNL        PMID   19542454                                                     
 JRNL        DOI    10.4049/JIMMUNOL.0900556                                     
-REMARK   1                                                                      
 REMARK   2                                                                      
 REMARK   2 RESOLUTION.    2.80 ANGSTROMS.                                       
 REMARK   3                                                                      
 REMARK   3 REFINEMENT.                                                          
 REMARK   3   PROGRAM     : REFMAC 5.2.0019                                      
-REMARK   3   AUTHORS     : MURSHUDOV,VAGIN,DODSON                               
+REMARK   3   AUTHORS     : MURSHUDOV,SKUBAK,LEBEDEV,PANNU,STEINER,              
+REMARK   3               : NICHOLLS,WINN,LONG,VAGIN                             
 REMARK   3                                                                      
 REMARK   3    REFINEMENT TARGET : MAXIMUM LIKELIHOOD                            
 REMARK   3                                                                      
@@ -139,7 +136,7 @@ REMARK   3    B22 (A**2) : 0.78000
 REMARK   3    B33 (A**2) : 2.87000                                              
 REMARK   3    B12 (A**2) : 0.00000                                              
 REMARK   3    B13 (A**2) : 4.54000                                              
-REMARK   3    B23 (A**2) : -0.00000                                             
+REMARK   3    B23 (A**2) : 0.00000                                              
 REMARK   3                                                                      
 REMARK   3  ESTIMATED OVERALL COORDINATE ERROR.                                 
 REMARK   3   ESU BASED ON R VALUE                            (A): NULL          
@@ -182,8 +179,13 @@ REMARK   3  ISOTROPIC THERMAL FACTOR RESTRAINTS.     COUNT   RMS    WEIGHT
 REMARK   3   MAIN-CHAIN BOND REFINED ATOMS  (A**2):  4116 ; 0.506 ; 2.000       
 REMARK   3   MAIN-CHAIN BOND OTHER ATOMS    (A**2):  NULL ;  NULL ;  NULL       
 REMARK   3   MAIN-CHAIN ANGLE REFINED ATOMS (A**2):  6657 ; 0.920 ; 3.000       
+REMARK   3   MAIN-CHAIN ANGLE OTHER ATOMS   (A**2):  NULL ;  NULL ;  NULL       
 REMARK   3   SIDE-CHAIN BOND REFINED ATOMS  (A**2):  2690 ; 0.589 ; 3.000       
+REMARK   3   SIDE-CHAIN BOND OTHER ATOMS    (A**2):  NULL ;  NULL ;  NULL       
 REMARK   3   SIDE-CHAIN ANGLE REFINED ATOMS (A**2):  2598 ; 0.923 ; 4.000       
+REMARK   3   SIDE-CHAIN ANGLE OTHER ATOMS   (A**2):  NULL ;  NULL ;  NULL       
+REMARK   3   LONG RANGE B REFINED ATOMS     (A**2):  NULL ;  NULL ;  NULL       
+REMARK   3   LONG RANGE B OTHER ATOMS       (A**2):  NULL ;  NULL ;  NULL       
 REMARK   3                                                                      
 REMARK   3 ANISOTROPIC THERMAL FACTOR RESTRAINTS.    COUNT   RMS   WEIGHT       
 REMARK   3   RIGID-BOND RESTRAINTS          (A**2):  NULL ;  NULL ;  NULL       
@@ -205,10 +207,10 @@ REMARK   3   SHRINKAGE RADIUS   : 0.80
 REMARK   3                                                                      
 REMARK   3  OTHER REFINEMENT REMARKS: NULL                                      
 REMARK   4                                                                      
-REMARK   4 3GSN COMPLIES WITH FORMAT V. 3.20, 01-DEC-08                         
+REMARK   4 3GSN COMPLIES WITH FORMAT V. 3.30, 13-JUL-11                         
 REMARK 100                                                                      
 REMARK 100 THIS ENTRY HAS BEEN PROCESSED BY RCSB ON 02-APR-09.                  
-REMARK 100 THE RCSB ID CODE IS RCSB052259.                                      
+REMARK 100 THE DEPOSITION ID IS D_1000052259.                                   
 REMARK 200                                                                      
 REMARK 200 EXPERIMENTAL DETAILS                                                 
 REMARK 200  EXPERIMENT TYPE                : X-RAY DIFFRACTION                  
@@ -309,7 +311,7 @@ REMARK 350 SOFTWARE USED: PISA
 REMARK 350 TOTAL BURIED SURFACE AREA: 10940 ANGSTROM**2                         
 REMARK 350 SURFACE AREA OF THE COMPLEX: 38090 ANGSTROM**2                       
 REMARK 350 CHANGE IN SOLVENT FREE ENERGY: -76.0 KCAL/MOL                        
-REMARK 350 APPLY THE FOLLOWING TO CHAINS: H, L, P, A, B                         
+REMARK 350 APPLY THE FOLLOWING TO CHAINS: H, P, L, A, B                         
 REMARK 350   BIOMT1   1  1.000000  0.000000  0.000000        0.00000            
 REMARK 350   BIOMT2   1  0.000000  1.000000  0.000000        0.00000            
 REMARK 350   BIOMT3   1  0.000000  0.000000  1.000000        0.00000            
@@ -322,6 +324,25 @@ REMARK 500
 REMARK 500  ATM1  RES C  SSEQI   ATM2  RES C  SSEQI           DISTANCE          
 REMARK 500   O    ASP A   151     OG   SER A   176              2.14            
 REMARK 500   NE1  TRP A    38     O    LYS A    42              2.15            
+REMARK 500                                                                      
+REMARK 500 REMARK: NULL                                                         
+REMARK 500                                                                      
+REMARK 500 GEOMETRY AND STEREOCHEMISTRY                                         
+REMARK 500 SUBTOPIC: COVALENT BOND ANGLES                                       
+REMARK 500                                                                      
+REMARK 500 THE STEREOCHEMICAL PARAMETERS OF THE FOLLOWING RESIDUES              
+REMARK 500 HAVE VALUES WHICH DEVIATE FROM EXPECTED VALUES BY MORE               
+REMARK 500 THAN 6*RMSD (M=MODEL NUMBER; RES=RESIDUE NAME; C=CHAIN               
+REMARK 500 IDENTIFIER; SSEQ=SEQUENCE NUMBER; I=INSERTION CODE).                 
+REMARK 500                                                                      
+REMARK 500 STANDARD TABLE:                                                      
+REMARK 500 FORMAT: (10X,I3,1X,A3,1X,A1,I4,A1,3(1X,A4,2X),12X,F5.1)              
+REMARK 500                                                                      
+REMARK 500 EXPECTED VALUES PROTEIN: ENGH AND HUBER, 1999                        
+REMARK 500 EXPECTED VALUES NUCLEIC ACID: CLOWNEY ET AL 1996                     
+REMARK 500                                                                      
+REMARK 500  M RES CSSEQI ATM1   ATM2   ATM3                                     
+REMARK 500    PRO H  50   C   -  N   -  CA  ANGL. DEV. =   9.6 DEGREES          
 REMARK 500                                                                      
 REMARK 500 REMARK: NULL                                                         
 REMARK 500                                                                      
@@ -389,46 +410,8 @@ REMARK 500    ASN A  96        3.07     56.19
 REMARK 500    ASN A 114       88.75     20.80                                   
 REMARK 500    ASP A 124     -136.48    -68.17                                   
 REMARK 500    SER A 127     -102.65     38.95                                   
-REMARK 500    LYS A 130      -25.15     51.11                                   
-REMARK 500    SER A 131       71.02     12.08                                   
-REMARK 500    THR A 142      -92.47    -94.87                                   
-REMARK 500    SER A 145      -67.50   -164.52                                   
-REMARK 500    GLN A 146     -150.33   -116.58                                   
-REMARK 500    SER A 147     -128.95   -148.88                                   
-REMARK 500    LYS A 148       85.76    -63.49                                   
-REMARK 500    SER A 150      -64.83   -153.25                                   
-REMARK 500    ASP A 151       46.92   -105.44                                   
-REMARK 500    LEU A 160     -123.31   -131.02                                   
-REMARK 500    ASP A 161     -173.37    -66.82                                   
-REMARK 500    MET A 162     -122.82    -97.93                                   
-REMARK 500    SER A 164      -51.87   -166.06                                   
-REMARK 500    ASP A 166      132.33     67.52                                   
-REMARK 500    ASN A 170       74.45   -116.04                                   
-REMARK 500    SER A 179      -19.35     80.89                                   
-REMARK 500    PHE A 181      -75.52    -37.98                                   
-REMARK 500    ALA A 182      102.95    100.53                                   
-REMARK 500    CYS A 183     -175.64    -67.83                                   
-REMARK 500    ASN A 185      -12.11    177.48                                   
-REMARK 500    ASN A 189       -9.59    -57.64                                   
-REMARK 500    ILE A 191       79.11   -113.17                                   
-REMARK 500    PRO A 193     -169.03    -64.03                                   
-REMARK 500    THR B  15      136.29    -39.02                                   
-REMARK 500    ILE B  46      -82.28    -96.73                                   
-REMARK 500    ARG B  68       66.41   -151.39                                   
-REMARK 500    LEU B  79      -74.37    -30.04                                   
-REMARK 500    SER B  87     -177.95    178.90                                   
-REMARK 500    TYR B 101      148.46    -39.45                                   
-REMARK 500    LEU B 117       -9.75    -58.27                                   
-REMARK 500    GLU B 132        6.06    -61.46                                   
-REMARK 500    GLN B 139       39.75     72.20                                   
-REMARK 500    ASN B 162      -15.52     56.95                                   
-REMARK 500    PRO B 181       27.77    -57.37                                   
-REMARK 500    LEU B 183       96.33   -178.85                                   
-REMARK 500    ASN B 184       -3.55     87.75                                   
-REMARK 500    ARG B 209      113.29   -160.57                                   
-REMARK 500    GLU B 219       89.00    -57.76                                   
-REMARK 500    ASN B 220      -43.43    174.04                                   
-REMARK 500    ARG B 242      132.02   -171.75                                   
+REMARK 500                                                                      
+REMARK 500 THIS ENTRY HAS      90 RAMACHANDRAN OUTLIERS.                        
 REMARK 500                                                                      
 REMARK 500 REMARK: NULL                                                         
 REMARK 800                                                                      
@@ -436,6 +419,7 @@ REMARK 800 SITE
 REMARK 800 SITE_IDENTIFIER: AC1                                                 
 REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
 REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE SO4 L 800                 
+REMARK 800                                                                      
 REMARK 800 SITE_IDENTIFIER: AC2                                                 
 REMARK 800 EVIDENCE_CODE: SOFTWARE                                              
 REMARK 800 SITE_DESCRIPTION: BINDING SITE FOR RESIDUE CL A 1                    
@@ -453,7 +437,7 @@ DBREF  3GSN L    1    99  UNP    P61769   B2MG_HUMAN      21    119
 DBREF  3GSN P    1     9  PDB    3GSN     3GSN             1      9             
 DBREF  3GSN A    2   200  PDB    3GSN     3GSN             2    200             
 DBREF  3GSN B    2   244  PDB    3GSN     3GSN             2    244             
-SEQADV 3GSN VAL H  245  UNP  P01892    ALA   269 ENGINEERED                     
+SEQADV 3GSN VAL H  245  UNP  P01892    ALA   269 ENGINEERED MUTATION            
 SEQADV 3GSN MET L    0  UNP  P61769              INITIATING METHIONINE          
 SEQRES   1 H  274  GLY SER HIS SER MET ARG TYR PHE PHE THR SER VAL SER          
 SEQRES   2 H  274  ARG PRO GLY ARG GLY GLU PRO ARG PHE ILE ALA VAL GLY          
@@ -7306,5 +7290,5 @@ CONECT 6624 6623
 CONECT 6625 6623                                                                
 CONECT 6626 6623                                                                
 CONECT 6627 6623                                                                
-MASTER      360    0    2   10   72    0    2    6 6647    5   19   66          
+MASTER      347    0    2   10   72    0    2    6 6647    5   19   66          
 END                                                                             
