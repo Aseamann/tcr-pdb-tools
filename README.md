@@ -1,5 +1,5 @@
 # TCRpdbTools
-Web application for processing T-cell Receptor (TCR) structural files (PDBs) with visual reference.
+Web application for processing T-cell Receptor (TCR) structural files (PDBs) with visual reference. Utilizing the PDB tool developed by me!
 
 ## Installation
 This program is setup to run in a docker container. Ensure that docker is installed on your system. The rest of the requirements will be installed when building. Look into "requirements.txt" for details on other installs.

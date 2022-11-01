@@ -31,5 +31,14 @@ def process_modification(context):
             tool.split_tcr(pdb_loc)
         if action == "clean_tcr_count_trim":
             tool.clean_tcr_count_trim()
+        if action == "split_mhc":
+            tool.split_mhc()
+        if action == "split_p":
+            tool.split_p()
+        if action == "split_pmhc":
+            tool.split_pmhc(pdb_loc)
+        if action == "clean_pdb":
+            tool.clean_pdb()
+
     os.chdir(str(BASE_DIR))
     return str(BASE_DIR) + "/PDBS/" + pdb_loc

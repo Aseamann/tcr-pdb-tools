@@ -7,7 +7,9 @@ User = get_user_model()
 
 
 FUNCTION_CHOICES = [("None", "None"), ("center", "Center"), ("split_tcr", "Split TCR"),
-                    ("clean_docking_count_non_tcr", "Clean Count"), ("clean_tcr_count_trim", "Trim TCR")]
+                    ("clean_docking_count_non_tcr", "Clean Count"), ("clean_tcr_count_trim", "Trim TCR"),
+                    ("split_mhc", "Split MHC"), ("split_p", "Split Peptide"), ("split_pmhc", "Split pMHC"),
+                    ("clean_pdb", "Full Clean")]
 
 PDB_CHOICES = []
 
