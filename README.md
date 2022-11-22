@@ -27,36 +27,36 @@ Visit (http://localhost:8000) in your browser of choice.
 5. Inspect the modified structure. What you'll see are now just two protein chains versus several, these are the alpha and beta chains of a TCR. We trimmed them to just the variable region. We also centered the coordinates of the variable region to position 0,0,0 in 3D space and aligned the principle axes of inertia along the X, Y, and Z axes. 
 
 ## User Stories
-1. As a student, I want to search through publicly available T-cell Receptor PDB files, so that I can find structural data I need for my research.
+1. As a student, I want to select a T-cell Receptor PDB file from the publicly available RCSB PDB database, so that I can download structural data I need for my research.
 
-AC: User is able to select a TCR PDB file from the dropdown menu in the site and able to download the file.
+AC: User is able to select a TCR PDB file from the dropdown menu. TCR PDB files are available through the RCSB api to be collected for use. The list of TCR PDB files is able to be pulled from the STCRdb database. The user is able to hit a submit button and download the TCR PDB file.
 
 
 2. As a student, I want to be able to visualize the protein structures during and post modification, so that I can download the structure after making the modifications to use for my research.
 
-AC: User is able to view structural data in the protein visualization tool and able to download the files after making modifications.
+AC: User is able to view structural data in the protein visualization tool. The user is able to select modifications from drop-down and other selection options in a form provided to the user. The user is able to hit a submit button and download the TCR PDB files after modifications are made.
 
 
 
 3. As a structural biologist, I want to be able to easily upload T-cell Receptor structural data stored as a PDB, so that I can conduct modifications that can help further analysis.
 
-AC: User is able to upload a PDB file and then make modifications.
+AC: User is able to upload a PDB file. The user is able to select modifications from drop-down and other selection options in a form provided to the user. The user is able to login through an authentication page. The user is sent back to the main page after signing in.
 
 
 
 4. As an administrator, I want to be able to view statical data on sites traffic, so I can share this data with other researchers when describing the usefulness of the application.
 
-AC: Admin is able to view statistical data about the use of the application by users.
+AC: Admin is able to view statistical data about the use of the application by users. The admin is able to reset and support accounts requesting assistance through email contact. The admin is able to login to an authentication page. 
 
 
 ## Mis-user Stories
 1. As rogue researcher, I want to collect structural biologist data of T-cell Receptors that may not be published yet in a public database, so that I can have a jump-start on analyzing the structure and publishing the materials first. 
 
-Response: Ensure that proper security measures are in place to prevent access to other users' accounts. Several steps can be in place, non-plain text storage of passwords, captcha if several attempts, and potential for 2FA.
+Mitigation Criteria: Ensure that proper security measures are in place to prevent access to other users' accounts. Several steps can be in place, non-plain text storage of passwords, captcha if several attempts, and potential for 2FA.
 
-2. As an opportunist breacher, I want to collect information stored about other users such as emails and passwords, so I can cross-reference with other accounts the user may have on other sites and gain access to finanical and other profitable accounts.
+2. As an opportunist breacher, I want to collect information stored about other users such as emails and passwords, so I can cross-reference with other accounts the user may have on other sites and gain access to financial and other profitable accounts.
 
-Response: Ensure that data stored on users is saved in a proper manner and avoiding any form of attack that gives access to user information.
+Mitigation Criteria: Ensure that data stored on users is saved in a proper manner and avoiding any form of attack that gives access to user information.
 
 ## Diagrams
 
