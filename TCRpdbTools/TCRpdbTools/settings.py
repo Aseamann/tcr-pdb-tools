@@ -58,9 +58,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'martor',
+    # 'martor',
     'app',
-    'PDBS',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ ROOT_URLCONF = 'TCRpdbTools.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "static/ember/")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
