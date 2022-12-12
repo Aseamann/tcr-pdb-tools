@@ -5,6 +5,6 @@ martor
 gunicorn
 numpy
 biopython
-sklearn
+scikit-learn
 djangorestframework
 pypdb

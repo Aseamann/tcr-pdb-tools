@@ -80,48 +80,6 @@
   class DynamicElement extends _component.default {}
   _exports.default = DynamicElement;
 });
-;define("tcrpdb/components/basic-dropdown-content", ["exports", "ember-basic-dropdown/components/basic-dropdown-content"], function (_exports, _basicDropdownContent) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _basicDropdownContent.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-basic-dropdown/components/basic-dropdown-content"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/components/basic-dropdown-trigger", ["exports", "ember-basic-dropdown/components/basic-dropdown-trigger"], function (_exports, _basicDropdownTrigger) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _basicDropdownTrigger.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-basic-dropdown/components/basic-dropdown-trigger"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/components/basic-dropdown", ["exports", "ember-basic-dropdown/components/basic-dropdown"], function (_exports, _basicDropdown) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _basicDropdown.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-basic-dropdown/components/basic-dropdown"eaimeta@70e063a35619d71f
-});
 ;define("tcrpdb/components/bs-accordion", ["exports", "ember-bootstrap/components/bs-accordion"], function (_exports, _bsAccordion) {
   "use strict";
 
@@ -962,20 +920,6 @@
   });
   0; //eaimeta@70e063a35619d71f0,"ember-bootstrap/components/bs-tooltip/element"eaimeta@70e063a35619d71f
 });
-;define("tcrpdb/components/maybe-in-element", ["exports", "ember-maybe-in-element/components/maybe-in-element"], function (_exports, _maybeInElement) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _maybeInElement.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-maybe-in-element/components/maybe-in-element"eaimeta@70e063a35619d71f
-});
 ;define("tcrpdb/components/pdb-choices", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component", "@ember/object", "jquery"], function (_exports, _component, _templateFactory, _component2, _object, _jquery) {
   "use strict";
 
@@ -983,30 +927,54 @@
     value: true
   });
   _exports.default = void 0;
-  var _class;
   0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component",0,"@ember/object",0,"jquery"eaimeta@70e063a35619d71f
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
     {{yield}}
-  
   */
   {
-    "id": "4AJhpzrV",
-    "block": "[[[18,1,null],[1,\"\\n\"]],[\"&default\"],false,[\"yield\"]]",
+    "id": "YR9EqvmJ",
+    "block": "[[[18,1,null]],[\"&default\"],false,[\"yield\"]]",
     "moduleName": "tcrpdb/components/pdb-choices.hbs",
     "isStrictMode": false
   });
-  let PdbChoicesComponent = (_class = class PdbChoicesComponent extends _component2.default {
-    getpdbs() {
-      _jquery.default.get('/api/pdbs', function (response) {
-        console.log(response);
-        console.log('We hit this');
-      });
-    }
-  }, (_applyDecoratedDescriptor(_class.prototype, "getpdbs", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "getpdbs"), _class.prototype)), _class);
+  class PdbChoicesComponent extends _component2.default {}
   _exports.default = PdbChoicesComponent;
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, PdbChoicesComponent);
+});
+;define("tcrpdb/components/protein-viewer", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component"], function (_exports, _component, _templateFactory, _component2) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component"eaimeta@70e063a35619d71f
+  const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
+  /*
+    {{yield}}
+  <div id="viewer"></div>
+  */
+  {
+    "id": "GTDfXk5h",
+    "block": "[[[18,1,null],[1,\"\\n\"],[10,0],[14,1,\"viewer\"],[12],[13]],[\"&default\"],false,[\"yield\"]]",
+    "moduleName": "tcrpdb/components/protein-viewer.hbs",
+    "isStrictMode": false
+  });
+  // var pv = require("bio-pv");
+  //
+  // // override the default options with something less restrictive.
+  // var options = {
+  //   width: 600,
+  //   height: 600,
+  //   antialias: true,
+  //   quality : 'medium'
+  // };
+  // // insert the viewer under the Dom element with id 'gl'.
+  // var viewer = pv.Viewer(document.getElementById('viewer'), options);
+  class ProteinViewerComponent extends _component2.default {}
+  _exports.default = ProteinViewerComponent;
+  (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, ProteinViewerComponent);
 });
 ;define("tcrpdb/components/tcrrequest-form", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component", "@ember/object", "jquery", "@glimmer/tracking"], function (_exports, _component, _templateFactory, _component2, _object, _jquery, _tracking) {
   "use strict";
@@ -1015,7 +983,7 @@
     value: true
   });
   _exports.default = void 0;
-  var _class, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+  var _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
   0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component",0,"@ember/object",0,"jquery",0,"@glimmer/tracking"eaimeta@70e063a35619d71f
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1025,28 +993,39 @@
   /*
     {{yield}}
   <div id="tcrrequest-form">
+    PDB:
     <Input
       @type="text"
       @value={{this.pdbname}}
     />
+    Action 1:
     <select class="ember-select" id="action1" {{on 'change' this.updateValue1}}>
-      <option value="Null">---</option>
-      <option value="center">Center</option>
+      <option value="None">None</option>
+      {{#each this.actions as |action|}}
+        <option value={{action.id}}>{{action.name}}</option>
+      {{/each}}
     </select>
+    Action 2:
     <select class="ember-select" id="action2" {{on 'change' this.updateValue2}}>
-      <option value="Null">---</option>
-      <option value="center">Center</option>
+      <option value="None">None</option>
+      {{#each this.actions as |action|}}
+        <option value={{action.id}}>{{action.name}}</option>
+      {{/each}}
     </select>
+    Action 3:
     <select class="ember-select" id="action3" {{on 'change' this.updateValue3}}>
-      <option value="Null">---</option>
-      <option value="center">Center</option>
+      <option value="None">None</option>
+      {{#each this.actions as |action|}}
+        <option value={{action.id}}>{{action.name}}</option>
+      {{/each}}
     </select>
     <button type="button" {{on "click" this.tcrrequest}}>Perform</button>
   </div>
+  
   */
   {
-    "id": "9Z06Ww+v",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,0],[14,1,\"tcrrequest-form\"],[12],[1,\"\\n  \"],[8,[39,1],null,[[\"@type\",\"@value\"],[\"text\",[30,0,[\"pdbname\"]]]],null],[1,\"\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action1\"],[4,[38,2],[\"change\",[30,0,[\"updateValue1\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"Null\"],[12],[1,\"---\"],[13],[1,\"\\n    \"],[10,\"option\"],[14,2,\"center\"],[12],[1,\"Center\"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action2\"],[4,[38,2],[\"change\",[30,0,[\"updateValue2\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"Null\"],[12],[1,\"---\"],[13],[1,\"\\n    \"],[10,\"option\"],[14,2,\"center\"],[12],[1,\"Center\"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action3\"],[4,[38,2],[\"change\",[30,0,[\"updateValue3\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"Null\"],[12],[1,\"---\"],[13],[1,\"\\n    \"],[10,\"option\"],[14,2,\"center\"],[12],[1,\"Center\"],[13],[1,\"\\n  \"],[13],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"tcrrequest\"]]],null],[12],[1,\"Perform\"],[13],[1,\"\\n\"],[13]],[\"&default\"],false,[\"yield\",\"input\",\"on\"]]",
+    "id": "XcGgAYRM",
+    "block": "[[[18,4,null],[1,\"\\n\"],[10,0],[14,1,\"tcrrequest-form\"],[12],[1,\"\\n  PDB:\\n  \"],[8,[39,1],null,[[\"@type\",\"@value\"],[\"text\",[30,0,[\"pdbname\"]]]],null],[1,\"\\n  Action 1:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action1\"],[4,[38,2],[\"change\",[30,0,[\"updateValue1\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,4],[[28,[37,4],[[30,0,[\"actions\"]]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,1,[\"id\"]]],[12],[1,[30,1,[\"name\"]]],[13],[1,\"\\n\"]],[1]],null],[1,\"  \"],[13],[1,\"\\n  Action 2:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action2\"],[4,[38,2],[\"change\",[30,0,[\"updateValue2\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,4],[[28,[37,4],[[30,0,[\"actions\"]]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,2,[\"id\"]]],[12],[1,[30,2,[\"name\"]]],[13],[1,\"\\n\"]],[2]],null],[1,\"  \"],[13],[1,\"\\n  Action 3:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action3\"],[4,[38,2],[\"change\",[30,0,[\"updateValue3\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,4],[[28,[37,4],[[30,0,[\"actions\"]]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,3,[\"id\"]]],[12],[1,[30,3,[\"name\"]]],[13],[1,\"\\n\"]],[3]],null],[1,\"  \"],[13],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"tcrrequest\"]]],null],[12],[1,\"Perform\"],[13],[1,\"\\n\"],[13],[1,\"\\n\"]],[\"action\",\"action\",\"action\",\"&default\"],false,[\"yield\",\"input\",\"on\",\"each\",\"-track-array\"]]",
     "moduleName": "tcrpdb/components/tcrrequest-form.hbs",
     "isStrictMode": false
   });
@@ -1057,7 +1036,15 @@
       _initializerDefineProperty(this, "action1", _descriptor2, this);
       _initializerDefineProperty(this, "action2", _descriptor3, this);
       _initializerDefineProperty(this, "action3", _descriptor4, this);
+      _initializerDefineProperty(this, "actions", _descriptor5, this);
     }
+    // model() {
+    //   jQuery.get('/api/actions', function (response) {
+    //     console.log(response);
+    //     this.actions = response;
+    //   });
+    //   return this.actions;
+    // }
     updateValue1(event) {
       this.action1 = event.target.value;
     }
@@ -1106,6 +1093,22 @@
     enumerable: true,
     writable: true,
     initializer: null
+  }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, "actions", [_tracking.tracked], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: function () {
+      return [{
+        id: 'clean_docking_count_non_tcr',
+        name: 'Clean Count'
+      }, {
+        id: 'clean_tcr_count_trim',
+        name: 'Trim TCR'
+      }, {
+        id: 'center',
+        name: 'Center'
+      }];
+    }
   }), _applyDecoratedDescriptor(_class.prototype, "updateValue1", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue1"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue2", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue2"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue3", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue3"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "tcrrequest", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "tcrrequest"), _class.prototype)), _class);
   _exports.default = TcrrequestFormComponent;
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, TcrrequestFormComponent);
@@ -1148,26 +1151,6 @@
     }
   });
   0; //eaimeta@70e063a35619d71f0,"@ember-data/debug"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/and", ["exports", "ember-truth-helpers/helpers/and"], function (_exports, _and) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "and", {
-    enumerable: true,
-    get: function () {
-      return _and.and;
-    }
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _and.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/and"eaimeta@70e063a35619d71f
 });
 ;define("tcrpdb/helpers/app-version", ["exports", "@ember/component/helper", "tcrpdb/config/environment", "ember-cli-app-version/utils/regexp"], function (_exports, _helper, _environment, _regexp) {
   "use strict";
@@ -1394,200 +1377,6 @@
   });
   0; //eaimeta@70e063a35619d71f0,"@embroider/util"eaimeta@70e063a35619d71f
 });
-;define("tcrpdb/helpers/eq", ["exports", "ember-truth-helpers/helpers/eq"], function (_exports, _eq) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _eq.default;
-    }
-  });
-  Object.defineProperty(_exports, "equal", {
-    enumerable: true,
-    get: function () {
-      return _eq.equal;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/eq"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/gt", ["exports", "ember-truth-helpers/helpers/gt"], function (_exports, _gt) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _gt.default;
-    }
-  });
-  Object.defineProperty(_exports, "gt", {
-    enumerable: true,
-    get: function () {
-      return _gt.gt;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/gt"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/gte", ["exports", "ember-truth-helpers/helpers/gte"], function (_exports, _gte) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _gte.default;
-    }
-  });
-  Object.defineProperty(_exports, "gte", {
-    enumerable: true,
-    get: function () {
-      return _gte.gte;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/gte"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/is-array", ["exports", "ember-truth-helpers/helpers/is-array"], function (_exports, _isArray) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _isArray.default;
-    }
-  });
-  Object.defineProperty(_exports, "isArray", {
-    enumerable: true,
-    get: function () {
-      return _isArray.isArray;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/is-array"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/is-empty", ["exports", "ember-truth-helpers/helpers/is-empty"], function (_exports, _isEmpty) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _isEmpty.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/is-empty"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/is-equal", ["exports", "ember-truth-helpers/helpers/is-equal"], function (_exports, _isEqual) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _isEqual.default;
-    }
-  });
-  Object.defineProperty(_exports, "isEqual", {
-    enumerable: true,
-    get: function () {
-      return _isEqual.isEqual;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/is-equal"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/lt", ["exports", "ember-truth-helpers/helpers/lt"], function (_exports, _lt) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _lt.default;
-    }
-  });
-  Object.defineProperty(_exports, "lt", {
-    enumerable: true,
-    get: function () {
-      return _lt.lt;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/lt"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/lte", ["exports", "ember-truth-helpers/helpers/lte"], function (_exports, _lte) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _lte.default;
-    }
-  });
-  Object.defineProperty(_exports, "lte", {
-    enumerable: true,
-    get: function () {
-      return _lte.lte;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/lte"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/not-eq", ["exports", "ember-truth-helpers/helpers/not-eq"], function (_exports, _notEq) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _notEq.default;
-    }
-  });
-  Object.defineProperty(_exports, "notEqualHelper", {
-    enumerable: true,
-    get: function () {
-      return _notEq.notEqualHelper;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/not-eq"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/not", ["exports", "ember-truth-helpers/helpers/not"], function (_exports, _not) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _not.default;
-    }
-  });
-  Object.defineProperty(_exports, "not", {
-    enumerable: true,
-    get: function () {
-      return _not.not;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/not"eaimeta@70e063a35619d71f
-});
 ;define("tcrpdb/helpers/on-document", ["exports", "ember-on-helper/helpers/on-document"], function (_exports, _onDocument) {
   "use strict";
 
@@ -1629,26 +1418,6 @@
     }
   });
   0; //eaimeta@70e063a35619d71f0,"ember-on-helper/helpers/on"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/helpers/or", ["exports", "ember-truth-helpers/helpers/or"], function (_exports, _or) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _or.default;
-    }
-  });
-  Object.defineProperty(_exports, "or", {
-    enumerable: true,
-    get: function () {
-      return _or.or;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/or"eaimeta@70e063a35619d71f
 });
 ;define("tcrpdb/helpers/page-title", ["exports", "ember-page-title/helpers/page-title"], function (_exports, _pageTitle) {
   "use strict";
@@ -1765,26 +1534,6 @@
   });
   0; //eaimeta@70e063a35619d71f0,"ember-render-helpers/helpers/will-destroy"eaimeta@70e063a35619d71f
 });
-;define("tcrpdb/helpers/xor", ["exports", "ember-truth-helpers/helpers/xor"], function (_exports, _xor) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _xor.default;
-    }
-  });
-  Object.defineProperty(_exports, "xor", {
-    enumerable: true,
-    get: function () {
-      return _xor.xor;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-truth-helpers/helpers/xor"eaimeta@70e063a35619d71f
-});
 ;define("tcrpdb/initializers/app-version", ["exports", "ember-cli-app-version/initializer-factory", "tcrpdb/config/environment"], function (_exports, _initializerFactory, _environment) {
   "use strict";
 
@@ -1886,20 +1635,6 @@
     initialize() {}
   };
   _exports.default = _default;
-});
-;define("tcrpdb/modifiers/basic-dropdown-trigger", ["exports", "ember-basic-dropdown/modifiers/basic-dropdown-trigger"], function (_exports, _basicDropdownTrigger) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _basicDropdownTrigger.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-basic-dropdown/modifiers/basic-dropdown-trigger"eaimeta@70e063a35619d71f
 });
 ;define("tcrpdb/modifiers/create-ref", ["exports", "ember-ref-bucket/modifiers/create-ref"], function (_exports, _createRef) {
   "use strict";
@@ -2068,6 +1803,8 @@
   });
   _exports.default = void 0;
   0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
+  // import jQuery from 'jquery';
+
   class IndexRoute extends _route.default {}
   _exports.default = IndexRoute;
 });
@@ -2234,7 +1971,8 @@
   0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars"eaimeta@70e063a35619d71f
   var _default = (0, _templateFactory.createTemplateFactory)(
   /*
-    {{page-title "TCRPDB"}}
+    {{page-title "Tcrpdb"}}
+  
   <BsNavbar
     @type="dark"
     @backgroundColor="dark"
@@ -2250,21 +1988,25 @@
             <ddm.item>
               <ddm.link-to @route="index">Home</ddm.link-to>
             </ddm.item>
+            <ddm.item>
+              <ddm.link-to @route="index">Other</ddm.link-to>
+            </ddm.item>
           </dd.menu>
         </nav.dropdown>
         <nav.item>
           <a class="nav-link" href="https://github.com/Aseamann/tcr-pdb-tools" target="_blank" rel="noopener noreferrer">
             <span>Source Code</span>
-           </a>
+          </a>
         </nav.item>
       </navbar.nav>
     </navbar.content>
   </BsNavbar>
+  
   {{outlet}}
   */
   {
-    "id": "6Q3HUY9Q",
-    "block": "[[[1,[28,[35,0],[\"TCRPDB\"],null]],[1,\"\\n\"],[8,[39,1],null,[[\"@type\",\"@backgroundColor\"],[\"dark\",\"dark\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],[[24,0,\"navbar-brand\"]],[[\"@route\"],[\"index\"]],[[\"default\"],[[[[1,\"TCRpdbTools\"]],[]]]]],[1,\"\\n  \"],[8,[30,1,[\"toggle\"]],null,null,null],[1,\"\\n  \"],[8,[30,1,[\"content\"]],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[30,1,[\"nav\"]],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[30,2,[\"dropdown\"]],null,null,[[\"default\"],[[[[1,\"\\n        \"],[8,[30,3,[\"toggle\"]],null,null,[[\"default\"],[[[[1,\"Jump To \"],[10,1],[14,0,\"caret\"],[12],[13]],[]]]]],[1,\"\\n        \"],[8,[30,3,[\"menu\"]],null,null,[[\"default\"],[[[[1,\"\\n          \"],[8,[30,4,[\"item\"]],null,null,[[\"default\"],[[[[1,\"\\n            \"],[8,[30,4,[\"link-to\"]],null,[[\"@route\"],[\"index\"]],[[\"default\"],[[[[1,\"Home\"]],[]]]]],[1,\"\\n          \"]],[]]]]],[1,\"\\n        \"]],[4]]]]],[1,\"\\n      \"]],[3]]]]],[1,\"\\n      \"],[8,[30,2,[\"item\"]],null,null,[[\"default\"],[[[[1,\"\\n        \"],[10,3],[14,0,\"nav-link\"],[14,6,\"https://github.com/Aseamann/tcr-pdb-tools\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"\\n          \"],[10,1],[12],[1,\"Source Code\"],[13],[1,\"\\n         \"],[13],[1,\"\\n      \"]],[]]]]],[1,\"\\n    \"]],[2]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[1]]]]],[1,\"\\n\"],[46,[28,[37,4],null,null],null,null,null]],[\"navbar\",\"nav\",\"dd\",\"ddm\"],false,[\"page-title\",\"bs-navbar\",\"link-to\",\"component\",\"-outlet\"]]",
+    "id": "45vHsI0C",
+    "block": "[[[1,[28,[35,0],[\"Tcrpdb\"],null]],[1,\"\\n\\n\"],[8,[39,1],null,[[\"@type\",\"@backgroundColor\"],[\"dark\",\"dark\"]],[[\"default\"],[[[[1,\"\\n  \"],[8,[39,2],[[24,0,\"navbar-brand\"]],[[\"@route\"],[\"index\"]],[[\"default\"],[[[[1,\"TCRpdbTools\"]],[]]]]],[1,\"\\n  \"],[8,[30,1,[\"toggle\"]],null,null,null],[1,\"\\n  \"],[8,[30,1,[\"content\"]],null,null,[[\"default\"],[[[[1,\"\\n    \"],[8,[30,1,[\"nav\"]],null,null,[[\"default\"],[[[[1,\"\\n      \"],[8,[30,2,[\"dropdown\"]],null,null,[[\"default\"],[[[[1,\"\\n        \"],[8,[30,3,[\"toggle\"]],null,null,[[\"default\"],[[[[1,\"Jump To \"],[10,1],[14,0,\"caret\"],[12],[13]],[]]]]],[1,\"\\n        \"],[8,[30,3,[\"menu\"]],null,null,[[\"default\"],[[[[1,\"\\n          \"],[8,[30,4,[\"item\"]],null,null,[[\"default\"],[[[[1,\"\\n            \"],[8,[30,4,[\"link-to\"]],null,[[\"@route\"],[\"index\"]],[[\"default\"],[[[[1,\"Home\"]],[]]]]],[1,\"\\n          \"]],[]]]]],[1,\"\\n          \"],[8,[30,4,[\"item\"]],null,null,[[\"default\"],[[[[1,\"\\n            \"],[8,[30,4,[\"link-to\"]],null,[[\"@route\"],[\"index\"]],[[\"default\"],[[[[1,\"Other\"]],[]]]]],[1,\"\\n          \"]],[]]]]],[1,\"\\n        \"]],[4]]]]],[1,\"\\n      \"]],[3]]]]],[1,\"\\n      \"],[8,[30,2,[\"item\"]],null,null,[[\"default\"],[[[[1,\"\\n        \"],[10,3],[14,0,\"nav-link\"],[14,6,\"https://github.com/Aseamann/tcr-pdb-tools\"],[14,\"target\",\"_blank\"],[14,\"rel\",\"noopener noreferrer\"],[12],[1,\"\\n          \"],[10,1],[12],[1,\"Source Code\"],[13],[1,\"\\n        \"],[13],[1,\"\\n      \"]],[]]]]],[1,\"\\n    \"]],[2]]]]],[1,\"\\n  \"]],[]]]]],[1,\"\\n\"]],[1]]]]],[1,\"\\n\\n\"],[46,[28,[37,4],null,null],null,null,null]],[\"navbar\",\"nav\",\"dd\",\"ddm\"],false,[\"page-title\",\"bs-navbar\",\"link-to\",\"component\",\"-outlet\"]]",
     "moduleName": "tcrpdb/templates/application.hbs",
     "isStrictMode": false
   });
@@ -2281,14 +2023,14 @@
   var _default = (0, _templateFactory.createTemplateFactory)(
   /*
     {{page-title "Index"}}
-  <PdbChoices/>
   <TcrrequestForm/>
+  <ProteinViewer/>
   
   {{outlet}}
   */
   {
-    "id": "3y8DqaAH",
-    "block": "[[[1,[28,[35,0],[\"Index\"],null]],[1,\"\\n\"],[8,[39,1],null,null,null],[1,\"\\n\"],[8,[39,2],null,null,null],[1,\"\\n\\n\"],[46,[28,[37,4],null,null],null,null,null]],[],false,[\"page-title\",\"pdb-choices\",\"tcrrequest-form\",\"component\",\"-outlet\"]]",
+    "id": "NkXWpPiQ",
+    "block": "[[[1,[28,[35,0],[\"Index\"],null]],[1,\"\\n\"],[8,[39,1],null,null,null],[1,\"\\n\"],[8,[39,2],null,null,null],[1,\"\\n\\n\"],[46,[28,[37,4],null,null],null,null,null]],[],false,[\"page-title\",\"tcrrequest-form\",\"protein-viewer\",\"component\",\"-outlet\"]]",
     "moduleName": "tcrpdb/templates/index.hbs",
     "isStrictMode": false
   });
@@ -2369,20 +2111,6 @@
     }
   });
   0; //eaimeta@70e063a35619d71f0,"@ember-data/serializer/-private"eaimeta@70e063a35619d71f
-});
-;define("tcrpdb/utils/calculate-position", ["exports", "ember-basic-dropdown/utils/calculate-position"], function (_exports, _calculatePosition) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(_exports, "default", {
-    enumerable: true,
-    get: function () {
-      return _calculatePosition.default;
-    }
-  });
-  0; //eaimeta@70e063a35619d71f0,"ember-basic-dropdown/utils/calculate-position"eaimeta@70e063a35619d71f
 });
 ;
 

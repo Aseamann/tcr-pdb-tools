@@ -7184,36 +7184,6 @@ define("@ember/test-helpers/wait-until", ["exports", "@ember/test-helpers/-utils
     });
   }
 });
-define("ember-basic-dropdown/test-support/helpers", ["exports", "@ember/test-helpers"], function (_exports, _testHelpers) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.clickTrigger = clickTrigger;
-  _exports.tapTrigger = tapTrigger;
-  function clickTrigger(scope) {
-    let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    let selector = '.ember-basic-dropdown-trigger';
-    if (scope) {
-      let element = document.querySelector(scope);
-      if (element.classList.contains('ember-basic-dropdown-trigger')) {
-        selector = scope;
-      } else {
-        selector = scope + ' ' + selector;
-      }
-    }
-    return (0, _testHelpers.click)(selector, options);
-  }
-  function tapTrigger(scope) {
-    let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    let selector = '.ember-basic-dropdown-trigger';
-    if (scope) {
-      selector = scope + ' ' + selector;
-    }
-    return (0, _testHelpers.tap)(selector, options);
-  }
-});
 define("ember-cli-test-loader/test-support/index", ["exports"], function (_exports) {
   /* globals requirejs, require */
   "use strict";

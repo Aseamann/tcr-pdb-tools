@@ -40,13 +40,15 @@ from rest_framework.authentication import *
 import json, datetime, pytz
 from django.core import serializers
 import requests
+from django.http import JsonResponse
+from PDBS.process_pdb_request import *
 
 
 class ActionList(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request, format=None):
-        return Response(FUNCTION_CHOICES, status=status.HTTP_200_OK)
+        return Response(FUNCTION_CHOICES_2, status=status.HTTP_200_OK)
 
 
 class PdbList(APIView):
@@ -82,10 +84,14 @@ class TcrRequestList(APIView):
         )
 
         newRequest.save()
+
+        # Process PDB request and return pdb
+        pdb = request.POST.get('pdb')
+        actions = [request.POST.get('action1'), request.POST.get('action2'), request.POST.get('action3')]
+        context = {"pdb": pdb, "actions": actions}
+        pdb_path = process_modification(context)
+        pdb = pdb_path.split('/')[-1]
         print('New Event Logged')
-        print(os.getcwd())
-        pdb = "1ao7.pdb"
-        pdb_path = "./PDBS/%s" % pdb
         pdb_file = open(pdb_path, "rb")
         response = FileResponse(pdb_file, content_type="application/force-download")
         response['Content-Length'] = os.path.getsize(pdb_path)
