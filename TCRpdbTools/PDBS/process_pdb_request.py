@@ -2,6 +2,7 @@ import os
 from PDBS.PDB_Tools_V3 import PdbTools3
 from TCRpdbTools.settings import BASE_DIR
 from pypdb.clients.pdb.pdb_client import *
+from shutil import copyfile
 
 
 def get_pdb(pdb_id):
@@ -40,5 +41,6 @@ def process_modification(context):
         if action == "clean_pdb":
             tool.clean_pdb()
 
+    copyfile(pdb_loc, "../static/PDBS/%s.pdb" % pdb)
     os.chdir(str(BASE_DIR))
     return str(BASE_DIR) + "/PDBS/" + pdb_loc

@@ -942,37 +942,60 @@
   _exports.default = PdbChoicesComponent;
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, PdbChoicesComponent);
 });
-;define("tcrpdb/components/protein-viewer", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component"], function (_exports, _component, _templateFactory, _component2) {
+;define("tcrpdb/components/protein-viewer", ["exports", "@ember/component", "@ember/template-factory", "@glimmer/component", "@glimmer/tracking"], function (_exports, _component, _templateFactory, _component2, _tracking) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
-  0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component"eaimeta@70e063a35619d71f
+  0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component",0,"@glimmer/tracking"eaimeta@70e063a35619d71f
   const __COLOCATED_TEMPLATE__ = (0, _templateFactory.createTemplateFactory)(
   /*
     {{yield}}
-  <div id="viewer"></div>
+  <!--<div id="viewer"></div>-->
+  <iframe src="../viewer/pdb" style="margin: 0 auto; display: flex; justify-content: center; padding: 10px;" width="1500px" height="700px"></iframe>
   */
   {
-    "id": "GTDfXk5h",
-    "block": "[[[18,1,null],[1,\"\\n\"],[10,0],[14,1,\"viewer\"],[12],[13]],[\"&default\"],false,[\"yield\"]]",
+    "id": "4XhgB3RA",
+    "block": "[[[18,1,null],[1,\"\\n\"],[3,\"<div id=\\\"viewer\\\"></div>\"],[1,\"\\n\"],[10,\"iframe\"],[14,\"src\",\"../viewer/pdb\"],[14,5,\"margin: 0 auto; display: flex; justify-content: center; padding: 10px;\"],[14,\"width\",\"1500px\"],[14,\"height\",\"700px\"],[12],[13]],[\"&default\"],false,[\"yield\"]]",
     "moduleName": "tcrpdb/components/protein-viewer.hbs",
     "isStrictMode": false
   });
-  // var pv = require("bio-pv");
-  //
-  // // override the default options with something less restrictive.
-  // var options = {
-  //   width: 600,
-  //   height: 600,
-  //   antialias: true,
-  //   quality : 'medium'
-  // };
-  // // insert the viewer under the Dom element with id 'gl'.
-  // var viewer = pv.Viewer(document.getElementById('viewer'), options);
-  class ProteinViewerComponent extends _component2.default {}
+  class ProteinViewerComponent extends _component2.default {
+    // override the default options with something less restrictive.
+    // @tracked
+    // options = {
+    //   width: 600,
+    //   height: 600,
+    //   antialias: true,
+    //   quality: 'medium'
+    // };
+    // @tracked viewer;
+    // init() {
+    //   this._super(...arguments);
+    //   console.log("This is loading");
+    //   console.log(pv);
+    //   console.log(document.getElementById('viewer'));
+    //   this.viewer = pv.Viewer(document.getElementById('viewer'), this.options);
+    //   this.loadMethylTransferase();
+    // }
+    // loadMethylTransferase() {
+    //   let viewer = this.viewer;
+    //   // asynchronously load the PDB file for the dengue methyl transferase
+    //   // from the server and display it in the viewer.
+    //   pv.io.fetchPdb('/static/PDBs/1ao7.pdb', function(structure) {
+    //     // display the protein as cartoon, coloring the secondary structure
+    //     // elements in a rainbow gradient.
+    //     viewer.cartoon('protein', structure, { color : color.ssSuccession() });
+    //     viewer.centerOn(structure);
+    //   });
+    // }
+    //
+    // load the methyl transferase once the DOM has finished loading. That's
+    // the earliest point the WebGL context is available.
+    // document.addEventListener('DOMContentLoaded', loadMethylTransferase);
+  }
   _exports.default = ProteinViewerComponent;
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, ProteinViewerComponent);
 });
@@ -983,7 +1006,7 @@
     value: true
   });
   _exports.default = void 0;
-  var _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+  var _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
   0; //eaimeta@70e063a35619d71f0,"ember-cli-htmlbars",0,"@glimmer/component",0,"@ember/object",0,"jquery",0,"@glimmer/tracking"eaimeta@70e063a35619d71f
   function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -994,29 +1017,28 @@
     {{yield}}
   <div id="tcrrequest-form">
     PDB:
-    <Input
-      @type="text"
-      @value={{this.pdbname}}
-    />
+    <select class="ember-select" id="pdb" {{on 'change' this.updatePDB}}>
+      <option value="None">None</option>
+      {{#each @pdblist as |pdb|}}
+        <option value={{pdb}}>{{pdb}}</option>
+      {{/each}}
+    </select>
     Action 1:
     <select class="ember-select" id="action1" {{on 'change' this.updateValue1}}>
-      <option value="None">None</option>
-      {{#each this.actions as |action|}}
-        <option value={{action.id}}>{{action.name}}</option>
+      {{#each @pdbactions as |action|}}
+        <option value={{action.method}}>{{action.name}}</option>
       {{/each}}
     </select>
     Action 2:
     <select class="ember-select" id="action2" {{on 'change' this.updateValue2}}>
-      <option value="None">None</option>
-      {{#each this.actions as |action|}}
-        <option value={{action.id}}>{{action.name}}</option>
+      {{#each @pdbactions as |action|}}
+        <option value={{action.method}}>{{action.name}}</option>
       {{/each}}
     </select>
     Action 3:
     <select class="ember-select" id="action3" {{on 'change' this.updateValue3}}>
-      <option value="None">None</option>
-      {{#each this.actions as |action|}}
-        <option value={{action.id}}>{{action.name}}</option>
+      {{#each @pdbactions as |action|}}
+        <option value={{action.method}}>{{action.name}}</option>
       {{/each}}
     </select>
     <button type="button" {{on "click" this.tcrrequest}}>Perform</button>
@@ -1024,8 +1046,8 @@
   
   */
   {
-    "id": "XcGgAYRM",
-    "block": "[[[18,4,null],[1,\"\\n\"],[10,0],[14,1,\"tcrrequest-form\"],[12],[1,\"\\n  PDB:\\n  \"],[8,[39,1],null,[[\"@type\",\"@value\"],[\"text\",[30,0,[\"pdbname\"]]]],null],[1,\"\\n  Action 1:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action1\"],[4,[38,2],[\"change\",[30,0,[\"updateValue1\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,4],[[28,[37,4],[[30,0,[\"actions\"]]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,1,[\"id\"]]],[12],[1,[30,1,[\"name\"]]],[13],[1,\"\\n\"]],[1]],null],[1,\"  \"],[13],[1,\"\\n  Action 2:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action2\"],[4,[38,2],[\"change\",[30,0,[\"updateValue2\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,4],[[28,[37,4],[[30,0,[\"actions\"]]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,2,[\"id\"]]],[12],[1,[30,2,[\"name\"]]],[13],[1,\"\\n\"]],[2]],null],[1,\"  \"],[13],[1,\"\\n  Action 3:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action3\"],[4,[38,2],[\"change\",[30,0,[\"updateValue3\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,4],[[28,[37,4],[[30,0,[\"actions\"]]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,3,[\"id\"]]],[12],[1,[30,3,[\"name\"]]],[13],[1,\"\\n\"]],[3]],null],[1,\"  \"],[13],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,2],[\"click\",[30,0,[\"tcrrequest\"]]],null],[12],[1,\"Perform\"],[13],[1,\"\\n\"],[13],[1,\"\\n\"]],[\"action\",\"action\",\"action\",\"&default\"],false,[\"yield\",\"input\",\"on\",\"each\",\"-track-array\"]]",
+    "id": "f6F7BfUL",
+    "block": "[[[18,7,null],[1,\"\\n\"],[10,0],[14,1,\"tcrrequest-form\"],[12],[1,\"\\n  PDB:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"pdb\"],[4,[38,1],[\"change\",[30,0,[\"updatePDB\"]]],null],[12],[1,\"\\n    \"],[10,\"option\"],[14,2,\"None\"],[12],[1,\"None\"],[13],[1,\"\\n\"],[42,[28,[37,3],[[28,[37,3],[[30,1]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,2]],[12],[1,[30,2]],[13],[1,\"\\n\"]],[2]],null],[1,\"  \"],[13],[1,\"\\n  Action 1:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action1\"],[4,[38,1],[\"change\",[30,0,[\"updateValue1\"]]],null],[12],[1,\"\\n\"],[42,[28,[37,3],[[28,[37,3],[[30,3]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,4,[\"method\"]]],[12],[1,[30,4,[\"name\"]]],[13],[1,\"\\n\"]],[4]],null],[1,\"  \"],[13],[1,\"\\n  Action 2:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action2\"],[4,[38,1],[\"change\",[30,0,[\"updateValue2\"]]],null],[12],[1,\"\\n\"],[42,[28,[37,3],[[28,[37,3],[[30,3]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,5,[\"method\"]]],[12],[1,[30,5,[\"name\"]]],[13],[1,\"\\n\"]],[5]],null],[1,\"  \"],[13],[1,\"\\n  Action 3:\\n  \"],[11,\"select\"],[24,0,\"ember-select\"],[24,1,\"action3\"],[4,[38,1],[\"change\",[30,0,[\"updateValue3\"]]],null],[12],[1,\"\\n\"],[42,[28,[37,3],[[28,[37,3],[[30,3]],null]],null],null,[[[1,\"      \"],[10,\"option\"],[15,2,[30,6,[\"method\"]]],[12],[1,[30,6,[\"name\"]]],[13],[1,\"\\n\"]],[6]],null],[1,\"  \"],[13],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,1],[\"click\",[30,0,[\"tcrrequest\"]]],null],[12],[1,\"Perform\"],[13],[1,\"\\n\"],[13],[1,\"\\n\"]],[\"@pdblist\",\"pdb\",\"@pdbactions\",\"action\",\"action\",\"action\",\"&default\"],false,[\"yield\",\"on\",\"each\",\"-track-array\"]]",
     "moduleName": "tcrpdb/components/tcrrequest-form.hbs",
     "isStrictMode": false
   });
@@ -1036,15 +1058,12 @@
       _initializerDefineProperty(this, "action1", _descriptor2, this);
       _initializerDefineProperty(this, "action2", _descriptor3, this);
       _initializerDefineProperty(this, "action3", _descriptor4, this);
-      _initializerDefineProperty(this, "actions", _descriptor5, this);
+      _initializerDefineProperty(this, "urlencodedpdbfile", _descriptor5, this);
+      _initializerDefineProperty(this, "fileURL_in", _descriptor6, this);
     }
-    // model() {
-    //   jQuery.get('/api/actions', function (response) {
-    //     console.log(response);
-    //     this.actions = response;
-    //   });
-    //   return this.actions;
-    // }
+    updatePDB(event) {
+      this.pdbname = event.target.value;
+    }
     updateValue1(event) {
       this.action1 = event.target.value;
     }
@@ -1070,7 +1089,19 @@
           type: 'application/text'
         });
         let fileURL = window.URL.createObjectURL(file);
+        this.fileURL_in = fileURL;
+        console.log(this.fileURL_in);
         window.location = fileURL;
+        // window.location.assign(fileURL);
+        // let component = this.urlencodedpdbfile;
+        // component.urlencodedpdbfile = encodeURIComponent(response.pdbfile);
+        // console.log(component);
+        _jquery.default.post('/api/fetchpdb', {
+          pdb: this.fileURL_in
+        }, function (response) {
+          console.log(response);
+          // component.urlencodedpdbfile = encodeURIComponent(response);
+        });
       });
     }
   }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "pdbname", [_tracking.tracked], {
@@ -1082,34 +1113,34 @@
     configurable: true,
     enumerable: true,
     writable: true,
-    initializer: null
+    initializer: function () {
+      return "None";
+    }
   }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, "action2", [_tracking.tracked], {
     configurable: true,
     enumerable: true,
     writable: true,
-    initializer: null
+    initializer: function () {
+      return "None";
+    }
   }), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, "action3", [_tracking.tracked], {
     configurable: true,
     enumerable: true,
     writable: true,
-    initializer: null
-  }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, "actions", [_tracking.tracked], {
+    initializer: function () {
+      return "None";
+    }
+  }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, "urlencodedpdbfile", [_tracking.tracked], {
     configurable: true,
     enumerable: true,
     writable: true,
-    initializer: function () {
-      return [{
-        id: 'clean_docking_count_non_tcr',
-        name: 'Clean Count'
-      }, {
-        id: 'clean_tcr_count_trim',
-        name: 'Trim TCR'
-      }, {
-        id: 'center',
-        name: 'Center'
-      }];
-    }
-  }), _applyDecoratedDescriptor(_class.prototype, "updateValue1", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue1"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue2", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue2"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue3", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue3"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "tcrrequest", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "tcrrequest"), _class.prototype)), _class);
+    initializer: null
+  }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, "fileURL_in", [_tracking.tracked], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: null
+  }), _applyDecoratedDescriptor(_class.prototype, "updatePDB", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updatePDB"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue1", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue1"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue2", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue2"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "updateValue3", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "updateValue3"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "tcrrequest", [_object.action], Object.getOwnPropertyDescriptor(_class.prototype, "tcrrequest"), _class.prototype)), _class);
   _exports.default = TcrrequestFormComponent;
   (0, _component.setComponentTemplate)(__COLOCATED_TEMPLATE__, TcrrequestFormComponent);
 });
@@ -1795,17 +1826,28 @@
   class AdminRoute extends _route.default {}
   _exports.default = AdminRoute;
 });
-;define("tcrpdb/routes/index", ["exports", "@ember/routing/route"], function (_exports, _route) {
+;define("tcrpdb/routes/index", ["exports", "@ember/routing/route", "jquery", "rsvp"], function (_exports, _route, _jquery, _rsvp) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
-  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route"eaimeta@70e063a35619d71f
-  // import jQuery from 'jquery';
-
-  class IndexRoute extends _route.default {}
+  0; //eaimeta@70e063a35619d71f0,"@ember/routing/route",0,"jquery",0,"rsvp"eaimeta@70e063a35619d71f
+  class IndexRoute extends _route.default {
+    model() {
+      return (0, _rsvp.hash)({
+        pdbactions: _jquery.default.get('/api/actions', function (response) {
+          console.log(response);
+          return response;
+        }),
+        pdblist: _jquery.default.get('/api/pdbs', function (response) {
+          console.log(response);
+          return response;
+        })
+      });
+    }
+  }
   _exports.default = IndexRoute;
 });
 ;define("tcrpdb/routes/not-found", ["exports", "@ember/routing/route"], function (_exports, _route) {
@@ -2023,14 +2065,18 @@
   var _default = (0, _templateFactory.createTemplateFactory)(
   /*
     {{page-title "Index"}}
-  <TcrrequestForm/>
+  <div class="container">
+    <img src="/static/Images/TCR_InMembrane.png" alt="Render of a T-cell Receptor integrated in a cell-membrane.">
+    <div class="text">Modify T-cell Receptor PDB Data</div>
+  </div>
   <ProteinViewer/>
+  <TcrrequestForm @pdbactions={{@model.pdbactions}} @pdblist={{@model.pdblist}}/>
   
   {{outlet}}
   */
   {
-    "id": "NkXWpPiQ",
-    "block": "[[[1,[28,[35,0],[\"Index\"],null]],[1,\"\\n\"],[8,[39,1],null,null,null],[1,\"\\n\"],[8,[39,2],null,null,null],[1,\"\\n\\n\"],[46,[28,[37,4],null,null],null,null,null]],[],false,[\"page-title\",\"tcrrequest-form\",\"protein-viewer\",\"component\",\"-outlet\"]]",
+    "id": "3qvMqa00",
+    "block": "[[[1,[28,[35,0],[\"Index\"],null]],[1,\"\\n\"],[10,0],[14,0,\"container\"],[12],[1,\"\\n  \"],[10,\"img\"],[14,\"src\",\"/static/Images/TCR_InMembrane.png\"],[14,\"alt\",\"Render of a T-cell Receptor integrated in a cell-membrane.\"],[12],[13],[1,\"\\n  \"],[10,0],[14,0,\"text\"],[12],[1,\"Modify T-cell Receptor PDB Data\"],[13],[1,\"\\n\"],[13],[1,\"\\n\"],[8,[39,1],null,null,null],[1,\"\\n\"],[8,[39,2],null,[[\"@pdbactions\",\"@pdblist\"],[[30,1,[\"pdbactions\"]],[30,1,[\"pdblist\"]]]],null],[1,\"\\n\\n\"],[46,[28,[37,4],null,null],null,null,null]],[\"@model\"],false,[\"page-title\",\"protein-viewer\",\"tcrrequest-form\",\"component\",\"-outlet\"]]",
     "moduleName": "tcrpdb/templates/index.hbs",
     "isStrictMode": false
   });

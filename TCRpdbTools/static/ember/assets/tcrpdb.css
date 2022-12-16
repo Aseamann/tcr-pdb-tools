@@ -10769,6 +10769,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* Following methods to style form */
 label {
   display: inline-block;
   margin-bottom: 10px;
@@ -10797,6 +10798,13 @@ button {
   color: white;
 }
 
+#tcrrequest-form {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
 .trigger-bootstrap-feel {
   display: inline-block;
   text-align: center;
@@ -10811,13 +10819,30 @@ button {
   outline: none;
 }
 
+/* Add padding to the text of the nav bar */
 .navbar-brand {
   padding-left: 50px;
 }
 
-#tcrrequest-form {
-  display: block;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1000px;
+/* style the image */
+.container img {
+  opacity: 0.7; /* add transparency to the image */
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
+/* style the text */
+.container .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
 }

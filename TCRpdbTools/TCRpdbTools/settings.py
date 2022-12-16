@@ -30,6 +30,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
+# Allow x frames
+X_FRAME_OPTIONS = 'ALLOW-FROM http://localhost:8000'
+
 # Martor Configuration
 MARTOR_THEME = 'bootstrap'  # semantic
 MARTOR_ENABLE_LABEL = True
@@ -58,8 +61,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'martor',
-    'app',
     'api',
 ]
 
@@ -70,7 +71,7 @@ MIDDLEWARE = [
     # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'TCRpdbTools.urls'
@@ -78,7 +79,7 @@ ROOT_URLCONF = 'TCRpdbTools.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "static/ember/")],
+        'DIRS': [os.path.join(BASE_DIR, "static/ember/"), os.path.join(BASE_DIR, "static/pdbviewer/")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

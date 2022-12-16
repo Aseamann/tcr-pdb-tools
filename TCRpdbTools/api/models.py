@@ -9,11 +9,9 @@ FUNCTION_CHOICES = [("None", "None"), ("center", "Center"), ("split_tcr", "Split
                     ("split_mhc", "Split MHC"), ("split_p", "Split Peptide"), ("split_pmhc", "Split pMHC"),
                     ("clean_pdb", "Full Clean")]
 
-FUNCTION_CHOICES_2 = [{"id": "austin", "name": "ishwor"}, {"id": "this", "name": "that"}]
-
 PDB_CHOICES = []
 
-with open("app/20221031_0310870_summary.tsv", "r") as f:
+with open("api/20221031_0310870_summary.tsv", "r") as f:
     for line in f:
         pdb = line.split("\t")[0]
         if pdb == "pdb":

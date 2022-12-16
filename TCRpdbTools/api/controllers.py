@@ -44,18 +44,33 @@ from django.http import JsonResponse
 from PDBS.process_pdb_request import *
 
 
+PDB_URL = "1bd2.pdb"
+
+class FetchPdb(APIView):
+    permission_classes = (AllowAny,)
+
+    def post(self, request, *args, **kwargs):
+        global PDB_URL
+        pdb = request.data.get('pdb')
+        PDB_URL = pdb
+        return Response("Success", status=status.HTTP_200_OK)
+
+
 class ActionList(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request, format=None):
-        return Response(FUNCTION_CHOICES_2, status=status.HTTP_200_OK)
+        Return_Choices = []
+        for each in FUNCTION_CHOICES:
+            Return_Choices.append({"method": each[0], "name": each[1]})
+        return Response(Return_Choices, status=status.HTTP_200_OK)
 
 
 class PdbList(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request, format=None):
-        return Response(PDB_CHOICES, status=status.HTTP_200_OK)
+        return Response([pdb[0] for pdb in PDB_CHOICES], status=status.HTTP_200_OK)
 
 
 class TcrRequestList(APIView):
@@ -88,12 +103,13 @@ class TcrRequestList(APIView):
         # Process PDB request and return pdb
         pdb = request.POST.get('pdb')
         actions = [request.POST.get('action1'), request.POST.get('action2'), request.POST.get('action3')]
+        print("ACTIONS: ", actions)
         context = {"pdb": pdb, "actions": actions}
         pdb_path = process_modification(context)
         pdb = pdb_path.split('/')[-1]
         print('New Event Logged')
         pdb_file = open(pdb_path, "rb")
-        response = FileResponse(pdb_file, content_type="application/force-download")
+        response = FileResponse(pdb_file, content_type="application/text")
         response['Content-Length'] = os.path.getsize(pdb_path)
         response['Content-Disposition'] = 'attachment; filename="%s"' % pdb
         return response

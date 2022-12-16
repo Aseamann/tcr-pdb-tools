@@ -23,6 +23,7 @@ from api import urls as api_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(api_urls)),
+    path('viewer/pdb', views.pdbviewer),
     re_path('^', views.index)
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
