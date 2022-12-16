@@ -1085,17 +1085,13 @@
       _jquery.default.post('/api/tcrrequest', formdata, function (response) {
         // let fileName = response.getResponseHeader('Content-Disposition');
         // console.log(fileName);
+        // Collect pdb file encoded as URL
         let file = new Blob([response], {
           type: 'application/text'
         });
         let fileURL = window.URL.createObjectURL(file);
-        this.fileURL_in = fileURL;
-        console.log(this.fileURL_in);
+        // Serve file to user
         window.location = fileURL;
-        // window.location.assign(fileURL);
-        // let component = this.urlencodedpdbfile;
-        // component.urlencodedpdbfile = encodeURIComponent(response.pdbfile);
-        // console.log(component);
         _jquery.default.post('/api/fetchpdb', {
           pdb: this.fileURL_in
         }, function (response) {

@@ -28,7 +28,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "172-26-1-134"]
 
 # Allow x frames
 X_FRAME_OPTIONS = 'ALLOW-FROM http://localhost:8000'
